@@ -10,6 +10,8 @@ from universe.wrappers import BlockingReset, GymCoreAction, EpisodeID, Unvectori
 from universe import spaces as vnc_spaces
 from universe.spaces.vnc_event import keycode
 import time
+import dolphin
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 universe.configure_logging()
@@ -73,7 +75,7 @@ def create_vncatari_env(env_id, client_id, remotes, **_):
 def create_atari_env(env_id):
     env = gym.make(env_id)
     env = Vectorize(env)
-    env = AtariRescale42x42(env)
+    #env = AtariRescale42x42(env)
     env = DiagnosticsInfo(env)
     env = Unvectorize(env)
     return env
