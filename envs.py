@@ -11,6 +11,7 @@ from universe import spaces as vnc_spaces
 from universe.spaces.vnc_event import keycode
 import time
 import dolphin
+import gym_ple
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
